@@ -7,14 +7,20 @@ require "recruiter/version"
 Gem::Specification.new do |s|
   s.name        = "recruiter"
   s.version     = Recruiter::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of Recruiter."
-  s.description = "TODO: Description of Recruiter."
+  s.authors     = ["Marcelo Jacobus"]
+  s.email       = ["Marcelo.Jacobus@gmail.com"]
+  s.homepage    = "https://github.com/mjacobus/recruiter"
+  s.summary     = "Recruiter is a Rails Engine for adding job posting functionality to a Rails APP"
+
+  s.description = <<-DESCRIPTION
+    Recruiter is a Rails Engine for adding job posting functionality to a Rails APP.
+
+    Users should be able to post articles
+  DESCRIPTION
+
   s.license     = "MIT"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 4.1.1"
 
