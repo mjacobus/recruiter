@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe HeaderHelper do
+describe Recruiter::HeaderHelper do
 end

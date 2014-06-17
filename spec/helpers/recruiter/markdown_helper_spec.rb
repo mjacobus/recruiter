@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe MarkdownHelper do
+describe Recruiter::MarkdownHelper do
   describe "#to_markdown" do
     it "renders markdown" do
       expect(helper.to_markdown('# text')).to match('<h1>text</h1>')

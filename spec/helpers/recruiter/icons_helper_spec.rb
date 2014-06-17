@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe IconsHelper do
+describe Recruiter::IconsHelper do
 end

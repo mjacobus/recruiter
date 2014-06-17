@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe CrudFlashMessagerHelper do
+describe Recruiter::CrudFlashMessagerHelper do
 end
