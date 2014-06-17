@@ -4,11 +4,11 @@ Recruiter
 Recruiter is a Rails Engine for adding job posting functionality to a Rails APP. It is intended to be reusable code for
 websites such as [Ruby Jobs Brazil](RubyJobsBrazil.com.br)
 
-[![Build Status](https://travis-ci.org/mjacobus/recruiter.png?branch=master)](https://travis-ci.org/mjacobus/gossiper)
-[![Coverage Status](https://coveralls.io/repos/mjacobus/recruiter/badge.png)](https://coveralls.io/r/mjacobus/gossiper)
-[![Code Climate](https://codeclimate.com/github/mjacobus/recruiter.png)](https://codeclimate.com/github/mjacobus/gossiper)
-[![Dependency Status](https://gemnasium.com/mjacobus/recruiter.png)](https://gemnasium.com/mjacobus/gossiper)
-[![Gem Version](https://badge.fury.io/rb/recruiter.png)](http://badge.fury.io/rb/gossiper)
+[![Build Status](https://travis-ci.org/mjacobus/recruiter.png?branch=master)](https://travis-ci.org/mjacobus/recruiter)
+[![Coverage Status](https://coveralls.io/repos/mjacobus/recruiter/badge.png)](https://coveralls.io/r/mjacobus/recruiter)
+[![Code Climate](https://codeclimate.com/github/mjacobus/recruiter.png)](https://codeclimate.com/github/mjacobus/recruiter)
+[![Dependency Status](https://gemnasium.com/mjacobus/recruiter.png)](https://gemnasium.com/mjacobus/recruiter)
+[![Gem Version](https://badge.fury.io/rb/recruiter.png)](http://badge.fury.io/rb/recruiter)
 
 Notice
 --------------
@@ -37,7 +37,7 @@ This will create the following files:
 
 ## Configuration
 
-You can customize recruiter behavior by editing the ```config/initializer/gossiper.rb```
+You can customize recruiter behavior by editing the ```config/initializer/recruiter.rb```
 
 ### Mounting the engine
 
