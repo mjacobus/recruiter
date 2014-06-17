@@ -160,6 +160,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coveralls
+  devise
   interactive_editor
   machinist
   rails (>= 3.2, <= 5.0)

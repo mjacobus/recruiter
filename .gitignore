@@ -1,3 +1,21 @@
 .bundle/
 log/*.log
 pkg/
+coverage
+spec/dummy/log
+!.keep
+*.DS_Store
+*.swo
+*.swp
+/.bundle
+/.env
+/.foreman
+*.sqlite3
+/log/*
+/public/system
+/tags
+/tmp/*
+config/smtp.yml
+
+# Ignore application configuration
+/config/application.yml
