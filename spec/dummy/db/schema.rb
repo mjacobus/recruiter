@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617180645) do
+ActiveRecord::Schema.define(version: 20140617181238) do
+
+  create_table "recruiter_cities", force: true do |t|
+    t.string   "name"
+    t.string   "short"
+    t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recruiter_cities", ["state_id"], name: "index_recruiter_cities_on_state_id"
 
   create_table "recruiter_states", force: true do |t|
     t.string   "name"
