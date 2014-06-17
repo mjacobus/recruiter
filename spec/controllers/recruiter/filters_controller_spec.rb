@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe FiltersController do
+describe Recruiter::FiltersController do
   let!(:nh)    { City.make!(name: 'Novo Hamburgo') }
   let!(:sl)    { City.make!(name: 'Sao Leopoldo') }
   let!(:job) { Job.make!(city: nh) }

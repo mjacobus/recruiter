@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe JobsController do
+describe Recruiter::JobsController do
   include ControllersSpecHelpers
 
   describe "GET 'index'" do

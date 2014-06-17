@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe OmniauthCallbacksController do
+describe Recruiter::OmniauthCallbacksController do
   include OmniauthControllerSpecs
 
   it_logs_in_with(Oauth::Facebook)

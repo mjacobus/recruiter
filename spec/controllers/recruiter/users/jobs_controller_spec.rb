@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Users::JobsController do
+describe Recruiter::Users::JobsController do
   include ControllersSpecHelpers
 
   let(:tag) { Tag.make! }

@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe JobsController, "routing" do
+describe Recruiter::JobsController, "routing" do
   it "routes to #index" do
     expect(get('/')).to route_to('jobs#index')
   end
