@@ -1,4 +1,3 @@
 Rails.application.routes.draw do
-
-  mount Recruiter::Engine => "/recruiter"
+  mount Recruiter::Engine => "/"
 end
