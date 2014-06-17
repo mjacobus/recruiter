@@ -22,7 +22,16 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 4.1.1"
+  s.add_dependency 'kaminari'
+  s.add_dependency 'devise'
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "shoulda-matchers"
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "simplecov"
+  s.add_development_dependency "coveralls"
+  s.add_development_dependency "machinist"
+  s.add_development_dependency "interactive_editor"
+  s.add_development_dependency "capybara"
+  s.add_development_dependency "spring-commands-rspec"
 end
