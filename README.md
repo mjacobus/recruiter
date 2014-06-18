@@ -2,7 +2,7 @@ Recruiter
 ----------
 
 Recruiter is a Rails Engine for adding job posting functionality to a Rails APP. It is intended to be reusable code for
-websites such as [Ruby Jobs Brazil](RubyJobsBrazil.com.br)
+websites such as [Ruby Jobs Brazil](http://rubyjobsbrazil.com.br)
 
 [![Build Status](https://travis-ci.org/mjacobus/recruiter.png?branch=master)](https://travis-ci.org/mjacobus/recruiter)
 [![Coverage Status](https://coveralls.io/repos/mjacobus/recruiter/badge.png)](https://coveralls.io/r/mjacobus/recruiter)
