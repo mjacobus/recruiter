@@ -19,7 +19,7 @@ Dir[Rails.root.join("../../spec/support/**/*.rb")].each do |f|
   begin
     require f
   rescue
-    puts "error on file #{}"
+    puts "error on file #{f}"
   end
 end
 

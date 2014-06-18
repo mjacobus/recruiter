@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617181238) do
+ActiveRecord::Schema.define(version: 20140617180934) do
 
   create_table "recruiter_cities", force: true do |t|
     t.string   "name"
