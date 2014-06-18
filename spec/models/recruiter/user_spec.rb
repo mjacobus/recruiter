@@ -12,7 +12,7 @@ module Recruiter
   describe User, "#email" do
     it { should_not validate_presence_of(:email)  }
     it { should_not validate_uniqueness_of(:email).case_insensitive  }
-    it_validates_email_format_of :email
+    # it_validates_email_format_of :email
   end
 
   describe User, "#uid" do
