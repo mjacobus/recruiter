@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140617180934) do
+ActiveRecord::Schema.define(version: 20140618165301) do
 
   create_table "recruiter_cities", force: true do |t|
     t.string   "name"
@@ -31,5 +31,23 @@ ActiveRecord::Schema.define(version: 20140617180934) do
   end
 
   add_index "recruiter_states", ["name"], name: "index_recruiter_states_on_name", unique: true
+
+  create_table "recruiter_users", force: true do |t|
+    t.string   "email",               default: "", null: false
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "provider"
+    t.string   "uid"
+    t.text     "provider_data"
+    t.string   "name"
+  end
+
+  add_index "recruiter_users", ["provider", "uid"], name: "index_recruiter_users_on_provider_and_uid", unique: true
 
 end
