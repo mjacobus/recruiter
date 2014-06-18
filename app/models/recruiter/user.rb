@@ -6,10 +6,6 @@ module Recruiter
 
     validates :name, presence: true
 
-    validates :email, email: { allow_nil: true }, uniqueness: {
-      case_sensitive: false
-    }
-
     validates :uid, uniqueness: { case_sensitive: false, scope: :provider }
   end
 end

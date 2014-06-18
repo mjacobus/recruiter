@@ -16,11 +16,7 @@ require 'shoulda-matchers'
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
 Dir[Rails.root.join("../../spec/support/**/*.rb")].each do |f|
-  begin
-    require f
-  rescue
-    puts "error on file #{f}"
-  end
+  require f
 end
 
 # Checks for pending migrations before tests are run.
