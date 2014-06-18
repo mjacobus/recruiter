@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140618165802) do
+ActiveRecord::Schema.define(version: 20140618170904) do
 
   create_table "recruiter_cities", force: true do |t|
     t.string   "name"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(version: 20140618165802) do
   add_index "recruiter_jobs", ["city_id"], name: "index_recruiter_jobs_on_city_id"
   add_index "recruiter_jobs", ["user_id"], name: "index_recruiter_jobs_on_user_id"
 
+  create_table "recruiter_jobs_tags", force: true do |t|
+    t.integer "job_id"
+    t.integer "tag_id"
+  end
+
+  add_index "recruiter_jobs_tags", ["job_id", "tag_id"], name: "index_recruiter_jobs_tags_on_job_id_and_tag_id", unique: true
+  add_index "recruiter_jobs_tags", ["job_id"], name: "index_recruiter_jobs_tags_on_job_id"
+  add_index "recruiter_jobs_tags", ["tag_id"], name: "index_recruiter_jobs_tags_on_tag_id"
+
   create_table "recruiter_states", force: true do |t|
     t.string   "name"
     t.string   "short"
@@ -45,6 +54,16 @@ ActiveRecord::Schema.define(version: 20140618165802) do
   end
 
   add_index "recruiter_states", ["name"], name: "index_recruiter_states_on_name", unique: true
+
+  create_table "recruiter_tags", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "sequence",    default: 10, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recruiter_tags", ["name"], name: "index_recruiter_tags_on_name", unique: true
 
   create_table "recruiter_users", force: true do |t|
     t.string   "email"
