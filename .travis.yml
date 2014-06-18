@@ -1,0 +1,25 @@
+language: ruby
+rvm:
+  - 1.9.3
+  - 2.0.0
+  - 2.1.0
+  - 2.1.1
+env:
+  - DB=sqlite
+  - DB=mysql
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - TRAVIS=true bundle exec rspec spec/
+gemfile:
+  # - gemfiles/Gemfile.rails-3.2.x
+  - Gemfile
+before_script:
+  - mysql -e 'create database Recruiter_test'
+  - psql -c 'create database Recruiter_test' -U postgres
+notifications:
+  email:
+    on_failure: change
+# branches:
+#   only:
+#     - master
