@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe Recruiter::OmniauthCallbacksController do
+  routes { Recruiter::Engine.routes }
+
   include OmniauthControllerSpecs
 
   it_logs_in_with(Recruiter::Oauth::Facebook)

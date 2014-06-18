@@ -13,7 +13,7 @@ module OmniauthControllerSpecs
 
       describe "#{provider_key}" do
         let(:env) { OauthHelper.providers[provider_key]  }
-        let(:user) { User.make  }
+        let(:user) { Recruiter::User.make  }
 
         before do
           expect(strategy_class).to receive(:find_or_build_user).with(env).and_return(user)
