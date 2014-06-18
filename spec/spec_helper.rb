@@ -32,4 +32,15 @@ RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
 
   config.include Records
+  config.include Devise::TestHelpers, type: :controller
+  # config.include Formulaic::Dsl, type: :feature
+  config.include CapybaraHelper, type: :feature
 end
+
+# Capybara.javascript_driver = :webkit
+# WebMock.disable_net_connect!(allow_localhost: true)
+
+# Capybara.configure do |config|
+#   config.always_include_port = true
+#   config.app_host = 'http://rubyjobsbrazil.com'
+# end
