@@ -3,9 +3,9 @@ require 'spec_helper'
 describe Recruiter::OmniauthCallbacksController do
   include OmniauthControllerSpecs
 
-  it_logs_in_with(Oauth::Facebook)
-  it_logs_in_with(Oauth::Github)
-  it_logs_in_with(Oauth::Google)
+  it_logs_in_with(Recruiter::Oauth::Facebook)
+  it_logs_in_with(Recruiter::Oauth::Github)
+  it_logs_in_with(Recruiter::Oauth::Google)
 
   describe "#redirect_url_for" do
     it "redirects to root path after the login" do
