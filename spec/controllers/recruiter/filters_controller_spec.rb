@@ -1,31 +1,35 @@
 require 'spec_helper'
 
-describe Recruiter::FiltersController do
-  let!(:nh)    { City.make!(name: 'Novo Hamburgo') }
-  let!(:sl)    { City.make!(name: 'Sao Leopoldo') }
-  let!(:job) { Job.make!(city: nh) }
+module Recruiter
+  describe FiltersController do
+    routes { Recruiter::Engine.routes }
 
-  describe "#index" do
-    it "responds with success" do
-      get :index, { filter: 'city' }
-      expect(response).to be_success
-    end
+    let!(:nh)    { City.make!(name: 'Novo Hamburgo') }
+    let!(:sl)    { City.make!(name: 'Sao Leopoldo') }
+    let!(:job) { Job.make!(city: nh) }
 
-    it "responds with a json" do
-      get :index, { filter: 'city' }
+    describe "#index" do
+      it "responds with success" do
+        get :index, { filter: 'city' }
+        expect(response).to be_success
+      end
 
-      expect(response.body).to eq([
-        { id: nh.id, name: nh.name },
-        { id: sl.id, name: sl.name },
-      ].to_json)
-    end
+      it "responds with a json" do
+        get :index, { filter: 'city' }
 
-    it "responds with a json" do
-      get :index, { filter: 'city', jobs: 1 }
+        expect(response.body).to eq([
+          { id: nh.id, name: nh.name },
+          { id: sl.id, name: sl.name },
+        ].to_json)
+      end
 
-      expect(response.body).to eq([
-        { id: nh.id, name: nh.name },
-      ].to_json)
+      it "responds with a json" do
+        get :index, { filter: 'city', jobs: 1 }
+
+        expect(response.body).to eq([
+          { id: nh.id, name: nh.name },
+        ].to_json)
+      end
     end
   end
 end
