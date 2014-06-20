@@ -14,5 +14,23 @@ module Recruiter
       generate.view_specs false
       generate.fixture_replacement :machinist
     end
+
+    config.to_prepare do
+      [
+        Recruiter::CrudFlashMessagerHelper,
+        Recruiter::FormHelper,
+        Recruiter::HeaderHelper,
+        Recruiter::IconsHelper,
+        Recruiter::LinksHelper,
+        Recruiter::MarkdownHelper,
+        Recruiter::OauthProvidersHelper,
+      ].each do |helper|
+        ApplicationController.helper(helper)
+      end
+
+      Dir.glob(Rails.root + "app/decorators/**/*_decorator*.rb").each do |c|
+        require_dependency(c)
+      end
+    end
   end
 end

@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'omniauth-google_oauth2'
   s.add_dependency 'omniauth-github'
   s.add_dependency 'redcarpet'
+  s.add_dependency 'draper'
 
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "shoulda-matchers"
