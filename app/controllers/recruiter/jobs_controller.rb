@@ -1,5 +1,5 @@
 module Recruiter
-  class JobsController < Recruiter::ApplicationController
+  class JobsController < ::RecruiterController
     def index
       @jobs = ::Recruiter::Filters::JobFilter.filter(filter_params).
         open.page(page).per(per_page)

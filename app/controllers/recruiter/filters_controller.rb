@@ -1,5 +1,5 @@
 module Recruiter
-  class FiltersController < ApplicationController
+  class FiltersController < ::RecruiterController
     def index
       @records = ::Recruiter::Filters.filter(type, params).map do |record|
         { id: record.id, name: record.name }
