@@ -6,7 +6,7 @@ Recruiter::Engine.routes.draw do
   devise_for :users,
     class_name: 'Recruiter::User',
     # module: 'devise',
-    controllers: { omniauth_callbacks: "omniauth_callbacks" }
+    controllers: { omniauth_callbacks: "recruiter/omniauth_callbacks" }
 
   devise_scope :user do
     get 'sign_in', to: 'devise/sessions#new', as: :new_user_session
