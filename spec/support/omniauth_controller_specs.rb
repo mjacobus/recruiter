@@ -28,7 +28,7 @@ module OmniauthControllerSpecs
 
         it "logs user in" do
           get provider_key
-          expect(controller.current_user).to eq(User.last)
+          expect(controller.current_user).to eq(Recruiter::User.last)
         end
 
         it "redirects to the 'redirect_url'" do
