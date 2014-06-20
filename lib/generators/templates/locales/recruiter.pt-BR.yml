@@ -1,5 +1,32 @@
 "pt-BR":
   recruiter:
+    layout:
+      header:
+        meta_description: Vagas para programadores Ruby e Ruby on Rails no Brasil.
+    jobs:
+      index:
+        title: Vagas em aberto
+      job:
+        view: Visualizar
+    filters:
+      title: Filtros
+      state: Estado
+      city: Cidade
+      select_state: Selecione um Estado
+      submit: Procurar
+    users:
+      jobs:
+        new:
+          title: Nova Vaga
+        index:
+          title: Vagas
+        show:
+          title: Visualização de Vaga
+        edit:
+          title: Edição de Vaga
+        form:
+          tags: Tags
+          markdown_hint: Você pode usar <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#html">markdown</a> para formatar sua mensagem.
     submit:
       new: Adicionar
       edit: Atualizar
