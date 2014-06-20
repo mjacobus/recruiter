@@ -1,5 +1,5 @@
 require 'machinist'
-require Rails.root.join('spec/support/blueprints.rb')
+require Rails.root.join('../support/blueprints.rb')
 
 module RandomRecords
   extend ActiveSupport::Concern
@@ -14,7 +14,7 @@ end
 ActiveRecord::Base.send(:include, RandomRecords)
 
 30.times do
-  job = Recruiter::Job.make!(city: City.random)
+  job = Recruiter::Job.make!(city: Recruiter::City.random)
 
   begin
     job.tags << Recruiter::Tag.random

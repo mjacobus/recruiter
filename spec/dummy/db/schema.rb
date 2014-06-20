@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20140618170904) do
     t.datetime "updated_at"
   end
 
-  add_index "recruiter_cities", ["state_id"], name: "index_recruiter_cities_on_state_id"
+  add_index "recruiter_cities", ["state_id"], name: "index_recruiter_cities_on_state_id", using: :btree
 
   create_table "recruiter_jobs", force: true do |t|
     t.string   "title"
@@ -34,17 +34,17 @@ ActiveRecord::Schema.define(version: 20140618170904) do
     t.datetime "updated_at"
   end
 
-  add_index "recruiter_jobs", ["city_id"], name: "index_recruiter_jobs_on_city_id"
-  add_index "recruiter_jobs", ["user_id"], name: "index_recruiter_jobs_on_user_id"
+  add_index "recruiter_jobs", ["city_id"], name: "index_recruiter_jobs_on_city_id", using: :btree
+  add_index "recruiter_jobs", ["user_id"], name: "index_recruiter_jobs_on_user_id", using: :btree
 
   create_table "recruiter_jobs_tags", force: true do |t|
     t.integer "job_id"
     t.integer "tag_id"
   end
 
-  add_index "recruiter_jobs_tags", ["job_id", "tag_id"], name: "index_recruiter_jobs_tags_on_job_id_and_tag_id", unique: true
-  add_index "recruiter_jobs_tags", ["job_id"], name: "index_recruiter_jobs_tags_on_job_id"
-  add_index "recruiter_jobs_tags", ["tag_id"], name: "index_recruiter_jobs_tags_on_tag_id"
+  add_index "recruiter_jobs_tags", ["job_id", "tag_id"], name: "index_recruiter_jobs_tags_on_job_id_and_tag_id", unique: true, using: :btree
+  add_index "recruiter_jobs_tags", ["job_id"], name: "index_recruiter_jobs_tags_on_job_id", using: :btree
+  add_index "recruiter_jobs_tags", ["tag_id"], name: "index_recruiter_jobs_tags_on_tag_id", using: :btree
 
   create_table "recruiter_states", force: true do |t|
     t.string   "name"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140618170904) do
     t.datetime "updated_at"
   end
 
-  add_index "recruiter_states", ["name"], name: "index_recruiter_states_on_name", unique: true
+  add_index "recruiter_states", ["name"], name: "index_recruiter_states_on_name", unique: true, using: :btree
 
   create_table "recruiter_tags", force: true do |t|
     t.string   "name"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20140618170904) do
     t.datetime "updated_at"
   end
 
-  add_index "recruiter_tags", ["name"], name: "index_recruiter_tags_on_name", unique: true
+  add_index "recruiter_tags", ["name"], name: "index_recruiter_tags_on_name", unique: true, using: :btree
 
   create_table "recruiter_users", force: true do |t|
     t.string   "email"
@@ -81,6 +81,6 @@ ActiveRecord::Schema.define(version: 20140618170904) do
     t.string   "name"
   end
 
-  add_index "recruiter_users", ["provider", "uid"], name: "index_recruiter_users_on_provider_and_uid", unique: true
+  add_index "recruiter_users", ["provider", "uid"], name: "index_recruiter_users_on_provider_and_uid", unique: true, using: :btree
 
 end

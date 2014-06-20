@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'jquery-rails'
   # s.add_dependency 'foundation-icons-sass-rails'
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency "mysql2"
   s.add_development_dependency "shoulda-matchers"
   s.add_development_dependency "rspec-rails", '3.0.0.beta2'
   s.add_development_dependency "simplecov"
