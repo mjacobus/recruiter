@@ -2,7 +2,7 @@ module OmniauthControllerSpecs
   extend ActiveSupport::Concern
 
   def stub_omniauth_with(params, origin = root_url)
-    @request.env["devise.mapping"]  = Devise.mappings[:user]
+    @request.env["devise.mapping"]  = ::Devise.mappings[:user]
     @request.env["omniauth.auth"]   = params
     @request.env["omniauth.origin"] = origin
   end

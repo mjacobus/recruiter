@@ -1,5 +1,5 @@
 module Recruiter
-  class OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  class OmniauthCallbacksController < ::Devise::OmniauthCallbacksController
     # For handling errors
     def new_session_path(scope)
       root_path
