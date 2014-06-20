@@ -15,8 +15,8 @@ gemfile:
   # - gemfiles/Gemfile.rails-3.2.x
   - Gemfile
 before_script:
-  - mysql -e 'create database Recruiter_test'
-  - psql -c 'create database Recruiter_test' -U postgres
+  - mysql -e 'create database recruiter_test'
+  - psql -c 'create database recruiter_test' -U postgres
 notifications:
   email:
     on_failure: change
