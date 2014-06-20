@@ -4,6 +4,12 @@ module Features
 
     def login_with_strategy(strategy_class)
       click_link t("recruiter.links.login.#{strategy_class.provider_key}")
+      # click_href user_omniauth_authorize_path(strategy_class.provider_key)
+      # click_href "/users/auth/#{strategy_class.provider_key}"
+    end
+
+    def click_href(href)
+      find(:xpath, "//a[@href='#{href}']").click
     end
 
     def logout
