@@ -9,9 +9,9 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li> <%= link_to(t('recruiter.links.jobs.new'), :new_job) %> </li>
-        <%= render 'login_links' unless current_user -%>
-        <%= render 'login_status' if current_user -%>
+        <li> <%= link_to(t('recruiter.links.jobs.new'), recruiter.new_job_path) %> </li>
+        <%= render 'recruiter/login_links' unless current_user -%>
+        <%= render 'recruiter/login_status' if current_user -%>
       </ul>
     </section>
   </nav>

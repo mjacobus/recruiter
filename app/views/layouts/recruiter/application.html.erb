@@ -13,12 +13,12 @@
     <%= stylesheet_link_tag 'recruiter/application', :media => 'all' %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
-    <%= render 'analytics' %>
+    <%= render 'recruiter/analytics' %>
   </head>
 
   <body>
-    <%= render 'top_menu' -%>
-    <%= render 'flashes' -%>
+    <%= render 'recruiter/top_menu' -%>
+    <%= render 'recruiter/flashes' -%>
     <div id="middle">
       <div id="main_content" class="row">
         <div class="small-12 columns">
@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <%= render 'footer' %>
-    <%= render 'javascript' %>
+    <%= render 'recruiter/footer' %>
+    <%= render 'recruiter/javascript' %>
   </body>
 </html>

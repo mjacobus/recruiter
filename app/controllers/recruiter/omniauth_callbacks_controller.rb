@@ -2,7 +2,7 @@ module Recruiter
   class OmniauthCallbacksController < ::Devise::OmniauthCallbacksController
     # For handling errors
     def new_session_path(scope)
-      root_path
+      new_user_session_path
     end
 
     def facebook
