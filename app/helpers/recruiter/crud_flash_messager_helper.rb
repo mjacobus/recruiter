@@ -9,12 +9,12 @@ module Recruiter
     end
 
     def set_crud_success_flash
-      default = t("system.messages.crud.#{params[:action]}.success")
+      default = t("recruiter.messages.crud.#{params[:action]}.success")
       flash[:notice] = t('.success', default: default)
     end
 
     def set_crud_error_flash
-      default = t("system.messages.crud.#{params[:action]}.error")
+      default = t("recruiter.messages.crud.#{params[:action]}.error")
       flash.now[:alert] = t('.success', default: default)
     end
   end

@@ -30,7 +30,7 @@ module Recruiter
 
     def login_message(user)
       key = user.new_record? ? 'account_created' : 'login_succeed'
-      I18n.t("system.messages.#{key}")
+      I18n.t("recruiter.messages.#{key}")
     end
 
     def redirect_url_for(user, origin = nil)

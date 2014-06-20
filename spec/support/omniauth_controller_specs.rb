@@ -38,7 +38,7 @@ module OmniauthControllerSpecs
 
         it "presents 'login_message'" do
           get provider_key
-          expect(flash[:notice]).to eq(I18n.t('system.messages.account_created'))
+          expect(flash[:notice]).to eq(I18n.t('recruiter.messages.account_created'))
         end
       end
     end

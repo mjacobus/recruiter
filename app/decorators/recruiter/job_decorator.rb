@@ -19,11 +19,11 @@ module Recruiter
     end
 
     def published_at
-      h.t('system.messages.posts.published_at', time: created_at_ago)
+      h.t('recruiter.messages.posts.published_at', time: created_at_ago)
     end
 
     def updated_at
-      h.t('system.messages.posts.updated_at', time: updated_at_ago)
+      h.t('recruiter.messages.posts.updated_at', time: updated_at_ago)
     end
 
     def city

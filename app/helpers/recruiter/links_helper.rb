@@ -7,15 +7,15 @@ module Recruiter
     end
 
     def new_link(url, options = {})
-      options.reverse_merge!({ title: t('system.links.new') })
+      options.reverse_merge!({ title: t('recruiter.links.new') })
 
       link_to(url, options) do
-        [new_icon, t('system.links.new')].join(" ").html_safe
+        [new_icon, t('recruiter.links.new')].join(" ").html_safe
       end
     end
 
     def edit_link(url, options = {}, &block)
-      options.reverse_merge!({ title: t('system.links.edit') })
+      options.reverse_merge!({ title: t('recruiter.links.edit') })
       button_link(url, 'warning tiny', options) do
         edit_icon
       end
@@ -24,8 +24,8 @@ module Recruiter
     def destroy_link(url, options = { }, &block)
       options.reverse_merge!({
         method: :delete,
-        data: { confirm: t('system.messages.confirm_destroy')},
-        title: t('system.links.destroy'),
+        data: { confirm: t('recruiter.messages.confirm_destroy')},
+        title: t('recruiter.links.destroy'),
       })
       button_link(url, 'alert tiny', options) do
         destroy_icon
@@ -33,7 +33,7 @@ module Recruiter
     end
 
     def show_link(url, options = {}, &block)
-      options.reverse_merge!({ title: t('system.links.show') })
+      options.reverse_merge!({ title: t('recruiter.links.show') })
       button_link(url, 'secondary tiny', options) do
         show_icon
       end
@@ -41,19 +41,19 @@ module Recruiter
 
     def back_link(url = { action: :index }, options = {}, &block)
       button_link(url, 'warning', options) do
-        t('system.links.back')
+        t('recruiter.links.back')
       end
     end
 
     def cancel_link(url = { action: :index }, options = {}, &block)
       button_link(url, 'alert', options) do
-        t('system.links.cancel')
+        t('recruiter.links.cancel')
       end
     end
 
     def submit_button
       action = params[:action]
-      content_tag(:button, t("system.submit.#{action}"), class: 'success')
+      content_tag(:button, t("recruiter.submit.#{action}"), class: 'success')
     end
   end
 end

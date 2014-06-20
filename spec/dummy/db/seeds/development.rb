@@ -22,4 +22,3 @@ ActiveRecord::Base.send(:include, RandomRecords)
   rescue ActiveRecord::RecordNotUnique => e
   end
 end
-

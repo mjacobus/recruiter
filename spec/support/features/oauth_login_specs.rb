@@ -3,11 +3,11 @@ module Features
     extend ActiveSupport::Concern
 
     def login_with_strategy(strategy_class)
-      click_link t("system.links.login.#{strategy_class.provider_key}")
+      click_link t("recruiter.links.login.#{strategy_class.provider_key}")
     end
 
     def logout
-      click_link(t('system.links.logout'))
+      click_link(t('recruiter.links.logout'))
     end
 
     module ClassMethods
@@ -17,13 +17,13 @@ module Features
           visit root_path
 
           login_with_strategy(strategy_class)
-          expect(page).to have_text(t('system.messages.account_created'))
+          expect(page).to have_text(t('recruiter.messages.account_created'))
 
           logout
           expect(page).to have_text(t('devise.sessions.signed_out'))
 
           login_with_strategy(strategy_class)
-          expect(page).to have_text(t('system.messages.login_succeed'))
+          expect(page).to have_text(t('recruiter.messages.login_succeed'))
         end
 
       end
