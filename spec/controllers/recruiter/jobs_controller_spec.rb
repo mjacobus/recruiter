@@ -1,36 +1,39 @@
 require 'spec_helper'
 
-describe Recruiter::JobsController do
-  include ControllersSpecHelpers
+module Recruiter
+  describe JobsController do
+    include ControllersSpecHelpers
+    routes { Recruiter::Engine.routes }
 
-  describe "GET 'index'" do
-    let(:job) { Job.make }
+    describe "GET 'index'" do
+      let(:job) { Job.make }
 
-    before do
-      chain = double(:query)
-      expect(chain).to receive(:per).and_return([job])
-      expect(chain).to receive(:page).and_return(chain)
-      expect(Job).to receive(:open).and_return(chain)
+      before do
+        chain = double(:query)
+        expect(chain).to receive(:per).and_return([job])
+        expect(chain).to receive(:page).and_return(chain)
+        expect(Job).to receive(:open).and_return(chain)
+      end
+
+      it "returns http success" do
+        get 'index'
+        expect(response).to be_success
+      end
+
+      it "assigns jobs to @jobs" do
+        get :index
+        expect(assigns(:jobs)).to eq([job])
+      end
     end
 
-    it "returns http success" do
-      get 'index'
-      expect(response).to be_success
-    end
+    describe "GET 'show'" do
+      let(:job) { Job.make! }
+      it_responds_with_success { get :show, id: job.to_param }
 
-    it "assigns jobs to @jobs" do
-      get :index
-      expect(assigns(:jobs)).to eq([job])
-    end
-  end
-
-  describe "GET 'show'" do
-    let(:job) { Job.make! }
-    it_responds_with_success { get :show, id: job.to_param }
-
-    it "assigns job" do
-      get :show, id: job.to_param
-      expect(assigns(:job)).to eq(job)
+      it "assigns job" do
+        get :show, id: job.to_param
+        expect(assigns(:job)).to eq(job)
+      end
     end
   end
 end

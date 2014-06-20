@@ -1,7 +1,7 @@
 module Recruiter
   class JobsController < ApplicationController
     def index
-      @jobs = ::Filters::JobFilter.filter(filter_params).
+      @jobs = ::Recruiter::Filters::JobFilter.filter(filter_params).
         open.page(page).per(per_page)
     end
 
