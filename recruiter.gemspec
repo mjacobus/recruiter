@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'simple_form'
   s.add_dependency 'foundation-rails'
   s.add_dependency 'jquery-rails'
-  # s.add_dependency 'foundation-icons-sass-rails'
+  s.add_dependency 'foundation-icons-sass-rails'
 
   s.add_development_dependency "mysql2"
   s.add_development_dependency "shoulda-matchers"
