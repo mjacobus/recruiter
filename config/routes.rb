@@ -15,6 +15,7 @@ Recruiter::Engine.routes.draw do
 
   scope :profile, module: :users do
     resources :jobs
+    resources :articles
   end
 
   get 'filters' => 'filters#index', as: :filters
