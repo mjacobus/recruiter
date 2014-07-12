@@ -32,5 +32,8 @@ Recruiter::Tag.blueprint do
 end
 
 Recruiter::Article.blueprint do
-  # Attributes here
+  user
+  title { "ruby article #{sn}" }
+  body { "article body" }
+  published { true }
 end
