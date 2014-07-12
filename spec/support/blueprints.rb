@@ -30,3 +30,7 @@ end
 Recruiter::Tag.blueprint do
   name { "tag #{sn}" }
 end
+
+Recruiter::Article.blueprint do
+  # Attributes here
+end
