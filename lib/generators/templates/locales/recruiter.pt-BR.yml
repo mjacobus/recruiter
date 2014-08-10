@@ -17,6 +17,18 @@
       select_state: Selecione um Estado
       submit: Procurar
     users:
+      articles:
+        new:
+          title: Novo Artigo
+        edit:
+          title: Edição de Artigo
+        show:
+          title: Visualização de Artigo
+        index:
+          title: Artigos
+        form:
+          tags: Tags
+          markdown_hint: Você pode usar <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#html">markdown</a> para formatar sua mensagem.
       jobs:
         new:
           title: Nova Vaga

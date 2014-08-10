@@ -4,7 +4,7 @@ module Recruiter
       before_action :set_article, only: [:show, :edit, :update, :destroy]
 
       def index
-        @articles = scope
+        @articles = scope.page(page).per(per_page)
         respond_with(@articles)
       end
 

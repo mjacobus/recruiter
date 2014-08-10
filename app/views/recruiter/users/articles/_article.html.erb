@@ -1,0 +1,18 @@
+<% title article.decorate.title %>
+
+<article id="article">
+  <header>
+    <h1><%= article.decorate.title %></h1>
+  </header>
+
+  <div class="how-to-apply">
+    <h2><%= Recruiter::Article.human_attribute_name(:body) %></h2>
+    <%= to_markdown(article.body) %>
+  </div>
+
+  <footer>
+    <p>
+      <%= article.decorate.created_at %>
+    </p>
+  </footer>
+</article>

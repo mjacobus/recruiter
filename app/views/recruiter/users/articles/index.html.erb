@@ -1,0 +1,24 @@
+<h1><%= t('.title') %></h1>
+
+<table class="wide">
+  <thead>
+    <tr>
+      <th><%= Recruiter::Job.human_attribute_name(:title) %></th>
+      <th><%= Recruiter::Job.human_attribute_name(:published_at) %></th>
+      <th class="actions"><%= new_link(:new_article, class: 'expand') %></th>
+    </tr>
+  </thead>
+  <% @articles.each do |article| %>
+    <tr>
+      <td><%= article.decorate.title %></td>
+      <td>@TODO</td>
+      <td class="actions">
+        <%= show_link(article) %>
+        <%= edit_link([:edit, article]) %>
+        <%= destroy_link(article) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= paginate @articles %>

@@ -1,0 +1,11 @@
+<%= simple_form_for(article) do |f| %>
+
+  <div class="row">
+    <div class="small-12 medium-8 large-8 columns">
+      <%= f.input :title %>
+      <%= f.input :body, as: :text, input_html: { rows: 5 }, hint: t('.markdown_hint').html_safe %>
+    </div>
+  </div>
+
+  <%= render 'form_actions' %>
+<% end %>
