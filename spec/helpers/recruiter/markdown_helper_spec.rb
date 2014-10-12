@@ -34,7 +34,7 @@ describe Recruiter::MarkdownHelper do
 puts "ruby"
 ```
 EOF
-        expect(render(markdown)).to match '<div class=\"highlight\">'
+        expect(render(markdown)).to match '<div class="highlight">'
       end
     end
   end
