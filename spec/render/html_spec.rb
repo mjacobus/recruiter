@@ -6,10 +6,6 @@ describe Recruiter::Render::HTML do
   end
 
   describe "#block_code" do
-    it "returns a text highlighted text" do
-      div = '<div>puts "foo"</div>'
-      rendered = subject.block_code(div, lexer: "ruby")
-      expect(rendered).to match('style')
-    end
+    it "returns a text highlighted text"
   end
 end
