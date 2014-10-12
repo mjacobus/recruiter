@@ -11,6 +11,7 @@ require "foundation-icons-sass-rails"
 require "jquery-rails"
 
 require "recruiter/engine"
+require "recruiter/render/html"
 
 module Recruiter
 end

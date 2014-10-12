@@ -5,8 +5,12 @@ module Recruiter
     end
 
     def renderer
-      @renderer    ||= Redcarpet::Render::HTML.new(filter_html: true)
-      @md_renderer ||= Redcarpet::Markdown.new(@renderer)
+      @md_renderer ||= Redcarpet::Markdown.new(
+        Render::HTML,
+        filter_html: true,
+        no_intra_emphasis: true,
+        fenced_code_blocks: true,
+      )
     end
   end
 end
