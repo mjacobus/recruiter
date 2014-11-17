@@ -11,7 +11,7 @@ describe Recruiter::MarkdownHelper do
         '<script>alert("")</script>'
       ]
       unsafe_html.each do |html|
-        expect(helper.to_markdown(html)).not_to match(html)
+        expect(helper.to_markdown(html)).not_to include(html)
       end
     end
   end
