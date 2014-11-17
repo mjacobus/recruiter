@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    recruiter (0.0.5)
+    recruiter (0.0.6)
       devise
       draper
       foundation-icons-sass-rails

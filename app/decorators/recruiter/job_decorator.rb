@@ -11,7 +11,7 @@ module Recruiter
     end
 
     def updated_at_ago
-      h.time_ago_in_words(object.created_at)
+      h.time_ago_in_words(object.updated_at)
     end
 
     def updated?
