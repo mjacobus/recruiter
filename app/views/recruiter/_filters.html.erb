@@ -7,10 +7,10 @@
     <h1><%= t('.title') %></h1>
     <%= form_tag(root_path, method: :get) do %>
       <label for="state_id"><%= t('.state') %></label>
-      <%= select_tag :state_id, state_options, include_blank: true, data: { 'filter-select' => '{"target": "#city_id", "filterParam":"state_id", "filter": "city", "data": {  "open_jobs": "1"} }' } %>
+      <%= select_tag :state_id, state_options, prompt: t('.select_state'), include_blank: true, data: { 'filter-select' => '{"target": "#city_id", "filterParam":"state_id", "filter": "city", "data": {  "open_jobs": "1"} }' } %>
 
       <label for="city_id"><%= t('.city') %></label>
-      <%= select_tag :city_id, city_options, prompt: t('.select_state') %>
+      <%= select_tag :city_id, city_options, prompt: t('.select_city') %>
       <button class="expand secondary"> <%= icon('page-search') %> <%= t('.submit') %> </button>
     <% end %>
   </header>
