@@ -1,4 +1,6 @@
 "pt-BR":
+  "true" : Sim
+  "false" : Não
   recruiter:
     url: http://rubyjobsbrazil.com.br
     layout:

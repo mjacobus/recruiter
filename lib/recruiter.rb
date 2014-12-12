@@ -10,6 +10,7 @@ require "foundation-rails"
 require "foundation-icons-sass-rails"
 require "jquery-rails"
 
+require "recruiter/decorator_helper"
 require "recruiter/engine"
 require "recruiter/render/html"
 

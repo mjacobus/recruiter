@@ -227,7 +227,7 @@ pt-BR:
         published_at: Publicação
         description: Descrição
         body: Conteúdo
-        published: Publicar
+        published: Publicado
   views:
     pagination:
       first: "&laquo; Primeira"
