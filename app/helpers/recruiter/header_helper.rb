@@ -5,7 +5,7 @@ module Recruiter
         content_for(:title) { title }
       else
         parts = [content_for(:title)]
-        parts << 'Rails Jobs Brazil'
+        parts << t('recruiter.site_title')
         parts.compact.uniq.join(' :: ')
       end
     end
