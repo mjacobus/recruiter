@@ -61,6 +61,9 @@
         facebook: Facebook
       jobs:
         new: Publicar Vaga
+      articles:
+        mine: Meus artigos
+        articles: Artigos
       forms:
         save: Publicar
     messages:
