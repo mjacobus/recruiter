@@ -84,7 +84,7 @@ module Recruiter
 
           it "redirects to #show" do
             post :create, article: valid_attributes
-            expect(response).to redirect_to(Article.last)
+            expect(response).to redirect_to([:user, Article.last])
           end
         end
 
@@ -129,7 +129,7 @@ module Recruiter
           it "redirects to #show" do
             article = Article.make!(user: user)
             patch :update, id: article.id, article: valid_attributes.merge(description: 'new_description')
-            expect(response).to redirect_to(Article.last)
+            expect(response).to redirect_to([:user, Article.last])
           end
 
           it_sets_flash_message :notice do
@@ -173,7 +173,7 @@ module Recruiter
         it "redirects to #index" do
           article = Article.make!(user: user)
           delete :destroy, id: article.id
-          expect(response).to redirect_to(:articles)
+          expect(response).to redirect_to([:user, :articles])
         end
 
         it_sets_flash_message :notice do

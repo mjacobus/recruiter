@@ -5,36 +5,36 @@ module Recruiter
 
       def index
         @articles = scope.page(page).per(per_page)
-        respond_with(@articles)
+        respond_with(:user, @articles)
       end
 
       def show
-        respond_with(@article)
+        respond_with(:user, @article)
       end
 
       def new
         @article = scope.build
-        respond_with(@article)
+        respond_with(:user, @article)
       end
 
       def create
         @article = scope.build(article_params)
         crud_flash @article.save
-        respond_with(@article)
+        respond_with(:user, @article)
       end
 
       def edit
-        respond_with(@article)
+        respond_with(:user, @article)
       end
 
       def update
         crud_flash @article.update(article_params)
-        respond_with(@article)
+        respond_with(:user, @article)
       end
 
       def destroy
         crud_flash @article.destroy
-        respond_with(@article)
+        respond_with(:user, @article)
       end
 
       private
