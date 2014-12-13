@@ -1,14 +1,14 @@
 PATH
   remote: .
   specs:
-    recruiter (0.1.0)
+    recruiter (0.1.1)
       devise
       draper
       foundation-icons-sass-rails
       foundation-rails
       jquery-rails
       kaminari
-      makeup
+      makeup (~> 0.3.0)
       omniauth
       omniauth-facebook
       omniauth-github

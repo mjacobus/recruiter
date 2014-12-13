@@ -29,7 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'omniauth-google_oauth2'
   s.add_dependency 'omniauth-github'
   s.add_dependency 'redcarpet', '~> 3.2.0'
-  s.add_dependency 'makeup'
+  s.add_dependency 'makeup', '~>0.3.0'
   s.add_dependency 'draper'
   s.add_dependency 'simple_form'
   s.add_dependency 'foundation-rails'
