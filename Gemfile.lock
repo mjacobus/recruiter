@@ -8,11 +8,11 @@ PATH
       foundation-rails
       jquery-rails
       kaminari
+      makeup
       omniauth
       omniauth-facebook
       omniauth-github
       omniauth-google_oauth2
-      pygments.rb
       redcarpet (~> 3.2.0)
       simple_form
 
@@ -86,8 +86,10 @@ GEM
     foundation-rails (5.4.5.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    github-markup (0.7.5)
     hashie (3.3.2)
     hike (1.2.3)
+    htmlentities (4.3.2)
     i18n (0.6.11)
     interactive_editor (0.0.10)
       spoon (>= 0.0.1)
@@ -102,6 +104,10 @@ GEM
     machinist (2.0)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    makeup (0.3.0)
+      github-markup (~> 0.7)
+      htmlentities (~> 4.3)
+      pygments.rb (~> 0.2)
     mime-types (2.4.3)
     mini_portile (0.6.1)
     minitest (5.5.0)
