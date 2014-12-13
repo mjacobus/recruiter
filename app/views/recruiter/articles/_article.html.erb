@@ -1,0 +1,12 @@
+<div class="job">
+  <%= link_to article do %>
+    <article class="row">
+      <div class="small-12 columns">
+        <div class="wrapper">
+          <h2><%= article.decorate.title %></h2>
+          <div class="published_date line"><%= article.decorate.published_at %></div>
+        </div>
+      </div>
+    </article>
+  <% end %>
+</div>

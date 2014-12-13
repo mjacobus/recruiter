@@ -5,38 +5,38 @@ module Recruiter
 
       def index
         @jobs = scope.page(page).per(per_page)
-        respond_with(@jobs)
+        respond_with(:user, @jobs)
       end
 
       def show
-        respond_with(@job)
+        respond_with(:user, @job)
       end
 
       def edit
-        respond_with(@job)
+        respond_with(:user, @job)
       end
 
       def new
         # TODO: This fixes issue #10. Not a beautiful think to do here
         flash.delete(:alert)
         @job = scope.new
-        respond_with(@job)
+        respond_with(:user, @job)
       end
 
       def create
         @job = scope.build(job_params)
         crud_flash @job.save
-        respond_with(@job)
+        respond_with(:user, @job)
       end
 
       def update
         crud_flash @job.update(job_params)
-        respond_with(@job)
+        respond_with(:user, @job)
       end
 
       def destroy
         crud_flash @job.destroy
-        respond_with(@job)
+        respond_with(:user, @job)
       end
 
       private

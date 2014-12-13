@@ -1,7 +1,8 @@
 Recruiter::Engine.routes.draw do
   root to: 'jobs#index'
 
-  resources :jobs, only: [:show], as: :offer
+  resources :jobs, only: [:index, :show]
+  resources :articles, only: [:index, :show]
 
   devise_for :users,
     class_name: 'Recruiter::User',
@@ -13,8 +14,9 @@ Recruiter::Engine.routes.draw do
     get 'sign_out', to: '/devise/sessions#destroy', as: :destroy_user_session
   end
 
-  scope :profile, module: :users do
+  scope :profile, module: :users, as: :user do
     resources :jobs
+    resources :articles
   end
 
   get 'filters' => 'filters#index', as: :filters

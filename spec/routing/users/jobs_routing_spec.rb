@@ -5,6 +5,7 @@ describe Recruiter::Users::JobsController, "routing" do
 
   it "routes to #index" do
     expect(get('profile/jobs')).to route_to('recruiter/users/jobs#index')
+    expect(get(user_jobs_path)).to route_to('recruiter/users/jobs#index')
   end
 
   it "routes to #show" do

@@ -30,3 +30,10 @@ end
 Recruiter::Tag.blueprint do
   name { "tag #{sn}" }
 end
+
+Recruiter::Article.blueprint do
+  user
+  title { "ruby article #{sn}" }
+  body { "article body" }
+  published { true }
+end

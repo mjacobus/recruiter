@@ -108,7 +108,7 @@ module Recruiter
 
           it "redirects to #show" do
             post :create, job: valid_attributes
-            expect(response).to redirect_to(Job.last)
+            expect(response).to redirect_to([:user, Job.last])
           end
 
           it_sets_flash_message(:notice) { post :create, job: valid_attributes }
@@ -140,7 +140,7 @@ module Recruiter
           it "redirects to #show" do
             job = Job.make!(user: user)
             patch :update, id: job.id, job: valid_attributes.merge(description: 'new_description')
-            expect(response).to redirect_to(Job.last)
+            expect(response).to redirect_to([:user, Job.last])
           end
 
           it_sets_flash_message :notice do
@@ -185,7 +185,7 @@ module Recruiter
         it "redirects to #index" do
           job = Job.make!(user: user)
           delete :destroy, id: job.id
-          expect(response).to redirect_to(:jobs)
+          expect(response).to redirect_to([:user, :jobs])
         end
 
         it_sets_flash_message :notice do

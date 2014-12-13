@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Recruiter::MarkdownHelper do
+  def render(text)
+    helper.to_markdown(text)
+  end
+
   describe "#to_markdown" do
     it "renders markdown" do
       expect(helper.to_markdown('# text')).to match('<h1>text</h1>')
@@ -12,6 +16,25 @@ describe Recruiter::MarkdownHelper do
       ]
       unsafe_html.each do |html|
         expect(helper.to_markdown(html)).not_to include(html)
+      end
+    end
+
+    it "won't enhance inner underscores" do
+      expect(render("ab_cd_ef")).not_to match '<em>'
+    end
+
+    it "renders single line break" do
+      expect(render("line\nbreake")).to match "line<br>\nbreak"
+    end
+
+    describe "#block_code" do
+      it "shows nice language specific block code" do
+        markdown = <<EOF
+```ruby
+puts "ruby"
+```
+EOF
+        expect(render(markdown)).to match '<div class="highlight">'
       end
     end
   end

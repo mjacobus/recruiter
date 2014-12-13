@@ -1,4 +1,5 @@
-require "devise"
+require "devise" # TODO: Remove this line once the warning is gone
+require "sass"
 require "redcarpet"
 require "omniauth-facebook"
 require "omniauth-github"
@@ -10,7 +11,10 @@ require "foundation-rails"
 require "foundation-icons-sass-rails"
 require "jquery-rails"
 
+require "recruiter/decorator_helper"
+require "recruiter/publicable_decorator_helper"
 require "recruiter/engine"
+require "recruiter/render/html"
 
 module Recruiter
 end

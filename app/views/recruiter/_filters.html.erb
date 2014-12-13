@@ -5,7 +5,7 @@
 <section>
   <header>
     <h1><%= t('.title') %></h1>
-    <%= form_tag(root_path, method: :get) do %>
+    <%= form_tag(jobs_path, method: :get) do %>
       <label for="state_id"><%= t('.state') %></label>
       <%= select_tag :state_id, state_options, prompt: t('.select_state'), include_blank: true, data: { 'filter-select' => '{"target": "#city_id", "filterParam":"state_id", "filter": "city", "data": {  "open_jobs": "1"} }' } %>
 

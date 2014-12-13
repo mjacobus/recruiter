@@ -9,6 +9,10 @@ module Recruiter
     it { should have_many(:jobs) }
   end
 
+  describe User, "#articles" do
+    it { should have_many(:articles) }
+  end
+
   describe User, "#email" do
     it { should_not validate_presence_of(:email)  }
     it { should_not validate_uniqueness_of(:email).case_insensitive  }
