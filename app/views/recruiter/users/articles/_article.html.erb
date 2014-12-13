@@ -5,7 +5,11 @@
     <h1><%= article.decorate.title %></h1>
   </header>
 
-  <%= to_markdown(article.body) %>
+  <div class="row">
+    <div class="small-4 columns">
+      <%= to_markdown(article.body) %>
+    </div>
+  </div>
 
   <footer>
     <p><%= article.decorate.publication %></p>
