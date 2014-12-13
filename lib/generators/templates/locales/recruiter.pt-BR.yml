@@ -69,6 +69,8 @@
       forms:
         save: Publicar
     messages:
+      published_at: Publicado há %{time}
+      updated_at: Atualizado há %{time}
       logged_as: "%{username}"
       login_with:
         google_oauth2: Entre com com sua conta do Google
