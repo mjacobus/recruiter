@@ -6,7 +6,7 @@ module Recruiter
       link_to url, options, &block
     end
 
-    def new_link(url, options = {})
+    def new_link(url = {action: :new}, options = {})
       options.reverse_merge!({ title: t('recruiter.links.new') })
 
       link_to(url, options) do

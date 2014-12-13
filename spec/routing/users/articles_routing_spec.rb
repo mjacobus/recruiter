@@ -5,6 +5,7 @@ describe Recruiter::Users::ArticlesController, "routing" do
 
   it "routes to #index" do
     expect(get('profile/articles')).to route_to('recruiter/users/articles#index')
+    expect(get(user_articles_path)).to route_to('recruiter/users/articles#index')
   end
 
   it "routes to #show" do

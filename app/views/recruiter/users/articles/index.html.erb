@@ -6,7 +6,7 @@
       <th><%= Recruiter::Article.human_attribute_name(:title) %></th>
       <th><%= Recruiter::Article.human_attribute_name(:published) %></th>
       <th><%= Recruiter::Article.human_attribute_name(:published_at) %></th>
-      <th class="actions"><%= new_link(:new_article, class: 'expand') %></th>
+      <th class="actions"><%= new_link({ action: :new }, class: 'expand') %></th>
     </tr>
   </thead>
   <% @articles.each do |article| %>
@@ -15,9 +15,9 @@
       <td><%= article.decorate.published? %></td>
       <td><%= article.decorate.published_at %></td>
       <td class="actions">
-        <%= show_link(article) %>
-        <%= edit_link([:edit, article]) %>
-        <%= destroy_link(article) %>
+        <%= show_link([:user, article]) %>
+        <%= edit_link(action: :edit, id: article.id) %>
+        <%= destroy_link(action: :destroy, id: article.id) %>
       </td>
     </tr>
   <% end %>

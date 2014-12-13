@@ -14,7 +14,7 @@ Recruiter::Engine.routes.draw do
     get 'sign_out', to: '/devise/sessions#destroy', as: :destroy_user_session
   end
 
-  scope :profile, module: :users do
+  scope :profile, module: :users, as: :user do
     resources :jobs
     resources :articles
   end
