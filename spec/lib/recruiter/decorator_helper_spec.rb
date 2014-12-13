@@ -1,3 +1,5 @@
+# encodig: UTF-8
+
 require 'spec_helper'
 
 describe Recruiter::DecoratorHelper do
