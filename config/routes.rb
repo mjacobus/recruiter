@@ -2,6 +2,7 @@ Recruiter::Engine.routes.draw do
   root to: 'jobs#index'
 
   resources :jobs, only: [:show], as: :offer
+  resources :articles, only: [:index, :show]
 
   devise_for :users,
     class_name: 'Recruiter::User',
