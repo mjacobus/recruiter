@@ -5,7 +5,7 @@
     <tr>
       <th><%= Recruiter::Job.human_attribute_name(:title) %></th>
       <th><%= Recruiter::Job.human_attribute_name(:published_at) %></th>
-      <th class="actions"><%= new_link(:new_job, class: 'expand') %></th>
+      <th class="actions"><%= new_link(:new_user_job, class: 'expand') %></th>
     </tr>
   </thead>
   <% @jobs.each do |job| %>
