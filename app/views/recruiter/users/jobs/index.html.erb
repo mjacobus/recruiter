@@ -13,9 +13,9 @@
       <td><%= job.decorate.title %></td>
       <td><%= job.decorate.created_at_ago %></td>
       <td class="actions">
-        <%= show_link(job) %>
-        <%= edit_link([:edit, job]) %>
-        <%= destroy_link(job) %>
+        <%= show_link([:user, job]) %>
+        <%= edit_link([:edit_user, job]) %>
+        <%= destroy_link([:user, job]) %>
       </td>
     </tr>
   <% end %>
