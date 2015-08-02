@@ -4,6 +4,7 @@ rvm:
   - 2.0.0
   - 2.1.0
   - 2.1.1
+  - 2.2
 env:
   - DB=sqlite
   - DB=mysql
@@ -12,7 +13,8 @@ script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - TRAVIS=true bundle exec rspec spec/
 gemfile:
-  # - gemfiles/Gemfile.rails-3.2.x
+  - gemfiles/Gemfile.rails-4.1.x
+  - gemfiles/Gemfile.rails-4.2.x
   - Gemfile
 before_script:
   - mysql -e 'create database recruiter_test'

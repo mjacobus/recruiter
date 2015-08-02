@@ -20,3 +20,4 @@ config/smtp.yml
 # Ignore application configuration
 /config/application.yml
 spec/dummy/tmp
+Gemfile.lock
