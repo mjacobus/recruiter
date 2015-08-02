@@ -5,23 +5,21 @@ rvm:
   - 2.1.0
   - 2.1.1
   - 2.2
+
 env:
   - DB=sqlite
   - DB=mysql
   - DB=postgresql
+
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - TRAVIS=true bundle exec rspec spec/
+
 gemfile:
   - gemfiles/Gemfile.rails-4.1.x
   - gemfiles/Gemfile.rails-4.2.x
   - Gemfile
+
 before_script:
   - mysql -e 'create database recruiter_test'
   - psql -c 'create database recruiter_test' -U postgres
-notifications:
-  email:
-    on_failure: change
-# branches:
-#   only:
-#     - master
