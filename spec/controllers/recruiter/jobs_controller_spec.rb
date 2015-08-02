@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Recruiter
-  describe JobsController do
+  describe JobsController, type: :controller do
     include ControllersSpecHelpers
     routes { Recruiter::Engine.routes }
 

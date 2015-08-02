@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Recruiter::OauthProvidersHelper do
+describe Recruiter::OauthProvidersHelper, type: :helper do
 end

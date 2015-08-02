@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Recruiter
-  describe FiltersController do
+  describe FiltersController, type: :controller do
     routes { Recruiter::Engine.routes }
 
     let!(:nh)    { City.make!(name: 'Novo Hamburgo') }

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Recruiter
-  describe FormHelper, "#options_for_available_cities" do
+  describe FormHelper, "#options_for_available_cities", type: :helper do
     it "returns the job types that are available" do
       expected   = City.make!
       unexpected = City.make!
@@ -14,7 +14,7 @@ module Recruiter
     end
   end
 
-  describe FormHelper, '#options_for_cities' do
+  describe FormHelper, '#options_for_cities', type: :helper do
     it "returns empty array when no id is given" do
       city
       expect(helper.options_for_cities).to eq([])

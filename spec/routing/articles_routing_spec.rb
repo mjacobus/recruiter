@@ -1,6 +1,6 @@
 require "spec_helper"
 
-describe Recruiter::ArticlesController, "routing" do
+describe Recruiter::ArticlesController, "routing", type: :routing do
   routes { Recruiter::Engine.routes }
 
   it "routes to #index" do

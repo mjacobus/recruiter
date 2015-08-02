@@ -1,4 +1,4 @@
 require 'spec_helper'
 
-describe Recruiter::LinksHelper do
+describe Recruiter::LinksHelper, type: :helper do
 end

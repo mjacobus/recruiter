@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Recruiter
-  describe ShowHelper do
+  describe ShowHelper, type: :helper do
     describe "AttributeShower" do
       describe "#show" do
         it "calls render with the correct params" do

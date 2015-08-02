@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Recruiter::OmniauthCallbacksController do
+describe Recruiter::OmniauthCallbacksController, type: :controller do
   routes { Recruiter::Engine.routes }
 
   include OmniauthControllerSpecs
