@@ -6,5 +6,5 @@ describe Recruiter::Tag do
     it { should validate_uniqueness_of(:name).case_insensitive }
   end
 
-  it { should have_and_belong_to_many(:jobs).class_name(Recruiter::Job) }
+  it { should have_and_belong_to_many(:jobs).class_name(Recruiter::Job.to_s) }
 end
