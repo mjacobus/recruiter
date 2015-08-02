@@ -1,7 +1,7 @@
 <div class="sticky">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
-      <li class="name"><h1><a href="/">Ruby Jobs Brazil</a></h1> </li>
+      <li class="name"><h1><a href="/"><%= t('recruiter.site_title') %></a></h1> </li>
       <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
     </ul>
 
@@ -23,7 +23,7 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="wrapper">
-        <h1> <%= image_tag('ruby_worker.png') %> Ruby Jobs Brazil</h1>
+        <h1><%= image_tag(t('recruiter.logo_image')) %><%= t('recruiter.site_title') %></h1>
       </div>
     </div>
   </div>
