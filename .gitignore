@@ -21,3 +21,4 @@ config/smtp.yml
 /config/application.yml
 spec/dummy/tmp
 Gemfile.lock
+.env.local
