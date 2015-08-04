@@ -9,7 +9,7 @@ require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
 Bundler.require(*Rails.groups)
-Dotenv::Railtie.load
+Dotenv::Railtie.load if defined?(Dotenv)
 
 require "recruiter"
 
