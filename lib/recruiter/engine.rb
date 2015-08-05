@@ -24,6 +24,7 @@ module Recruiter
         Recruiter::LinksHelper,
         Recruiter::MarkdownHelper,
         Recruiter::OauthProvidersHelper,
+        Recruiter::OgDataHelper,
       ].each do |helper|
         ApplicationController.helper(helper)
       end
