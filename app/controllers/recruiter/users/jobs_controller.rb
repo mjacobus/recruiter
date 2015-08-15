@@ -17,7 +17,7 @@ module Recruiter
       end
 
       def new
-        # TODO: This fixes issue #10. Not a beautiful think to do here
+        # TODO: This fixes issue #10. Not a beautiful thing to do here
         flash.delete(:alert)
         @job = scope.new
         respond_with(:user, @job)
