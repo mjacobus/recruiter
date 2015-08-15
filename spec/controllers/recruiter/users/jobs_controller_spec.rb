@@ -29,6 +29,18 @@ module Recruiter
     describe "#index" do
       it_requires_authentication { get :index }
 
+      with_admin_user do
+        it "lists the posts that the user posted" do
+          other_job = Job.make! # another user job
+          job = Job.make!(user: admin)
+          get :index
+          expect(assigns(:jobs)).to eq([other_job, job])
+        end
+
+        it_responds_with_success { get :index }
+        it_renders_template(:index) { get :index }
+      end
+
       with_valid_user do
         it "lists the posts that the user posted" do
           Job.make! # another user job
@@ -45,7 +57,7 @@ module Recruiter
     describe "#edit" do
       it_requires_authentication { get :edit, id: 1 }
 
-      with_valid_user do
+      with_valid_user_or_admin do
         let(:job) { Job.make!(user: user) }
 
         it "assigns job to @job" do
@@ -61,7 +73,7 @@ module Recruiter
     describe "#show" do
       it_requires_authentication { get :show, id: 1 }
 
-      with_valid_user do
+      with_valid_user_or_admin do
         let(:job) { Job.make!(user: user) }
 
         it "assigns job to @job" do
@@ -77,6 +89,17 @@ module Recruiter
     describe "#new" do
       it_requires_authentication { get :new }
 
+      with_admin_user do
+        it "assigns a new record to @job" do
+          get :new
+          expect(assigns(:job)).to be_a_new(Job)
+          expect(assigns(:job).user).to eq(admin)
+        end
+
+        it_responds_with_success { get :new }
+        it_renders_template(:new) { get :new }
+      end
+
       with_valid_user do
         it "assigns a new record to @job" do
           get :new
@@ -91,6 +114,35 @@ module Recruiter
 
     describe "#create" do
       it_requires_authentication { post :create }
+
+      with_admin_user do
+        describe "with valid attribbutes" do
+          it "creates a new record" do
+            expect do
+              post :create, job: valid_attributes
+            end.to change { admin.jobs.count }.by(1)
+          end
+
+          it "creates tags associations" do
+            expect do
+              post :create, job: valid_attributes
+            end.to change { tag.jobs.count }.by(1)
+          end
+
+          it "redirects to #show" do
+            post :create, job: valid_attributes
+            expect(response).to redirect_to([:user, Job.last])
+          end
+
+          it_sets_flash_message(:notice) { post :create, job: valid_attributes }
+        end
+
+        describe "with invalid attributes" do
+          it_responds_with_success { post :create, job: invalid_attributes }
+          it_renders_template(:new) { post :create, job: invalid_attributes }
+          it_sets_flash_message(:alert, true) { post :create, job: invalid_attributes }
+        end
+      end
 
       with_valid_user do
         describe "with valid attribbutes" do
@@ -122,11 +174,10 @@ module Recruiter
       end
     end
 
-
     describe "#update" do
       it_requires_authentication { patch :update, id: 1 }
 
-      with_valid_user do
+      with_valid_user_or_admin do
         describe "with valid attributes" do
           it "updates record" do
             job = Job.make!(user: user)
@@ -173,7 +224,7 @@ module Recruiter
     describe "#destroy" do
       it_requires_authentication { delete :destroy, id: 1 }
 
-      with_valid_user do
+      with_valid_user_or_admin do
         it "destroys a record" do
           job = Job.make!(user: user)
 

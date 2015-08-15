@@ -4,7 +4,7 @@ module Recruiter
       before_action :set_job, only: [:show, :edit, :update, :destroy]
 
       def index
-        @jobs = scope.page(page).per(per_page)
+        @jobs = jobs.page(page).per(per_page)
         respond_with(:user, @jobs)
       end
 
@@ -19,12 +19,12 @@ module Recruiter
       def new
         # TODO: This fixes issue #10. Not a beautiful thing to do here
         flash.delete(:alert)
-        @job = scope.new
+        @job = user_jobs.new
         respond_with(:user, @job)
       end
 
       def create
-        @job = scope.build(job_params)
+        @job = user_jobs.build(job_params)
         crud_flash @job.save
         respond_with(:user, @job)
       end
@@ -41,12 +41,20 @@ module Recruiter
 
       private
 
-      def scope
+      def jobs
+        if current_user.admin?
+          return Job.all
+        end
+
+        user_jobs
+      end
+
+      def user_jobs
         current_user.jobs
       end
 
       def set_job
-        @job = scope.find(params[:id])
+        @job = jobs.find(params[:id])
       end
 
       def job_params

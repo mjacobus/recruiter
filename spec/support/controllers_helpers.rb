@@ -45,5 +45,17 @@ module ControllersSpecHelpers
         class_eval(&block)
       end
     end
+
+    def with_admin_user(&block)
+      context "when admin is logged in" do
+        before { sign_in(admin) }
+        class_eval(&block)
+      end
+    end
+
+    def with_valid_user_or_admin(&block)
+      with_valid_user(&block)
+      with_admin_user(&block)
+    end
   end
 end
