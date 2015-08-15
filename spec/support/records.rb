@@ -9,5 +9,11 @@ module Records
 
     let(:city) { Recruiter::City.make! }
     let(:state) { city.state }
+
+    let(:user_job) { Recruiter::Job.make!(user: user) }
+    let(:admin_job) { Recruiter::Job.make!(user: admin) }
+
+    let(:user_article) { Recruiter::Article.make!(user: user) }
+    let(:admin_article) { Recruiter::Article.make!(user: admin) }
   end
 end

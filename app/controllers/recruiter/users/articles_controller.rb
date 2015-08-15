@@ -4,7 +4,7 @@ module Recruiter
       before_action :set_article, only: [:show, :edit, :update, :destroy]
 
       def index
-        @articles = scope.page(page).per(per_page)
+        @articles = articles.page(page).per(per_page)
         respond_with(:user, @articles)
       end
 
@@ -13,12 +13,12 @@ module Recruiter
       end
 
       def new
-        @article = scope.build
+        @article = user_articles.build
         respond_with(:user, @article)
       end
 
       def create
-        @article = scope.build(article_params)
+        @article = user_articles.build(article_params)
         crud_flash @article.save
         respond_with(:user, @article)
       end
@@ -39,12 +39,17 @@ module Recruiter
 
       private
 
-      def scope
+      def articles
+        return Recruiter::Article.all if current_user.admin?
+        current_user.articles
+      end
+
+      def user_articles
         current_user.articles
       end
 
       def set_article
-        @article = scope.find(params[:id])
+        @article = articles.find(params[:id])
       end
 
       def article_params

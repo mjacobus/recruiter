@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150815184100) do
+ActiveRecord::Schema.define(version: 20150815200812) do
 
   create_table "recruiter_articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20150815184100) do
     t.boolean  "published",                default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin"
   end
 
   add_index "recruiter_articles", ["user_id"], name: "index_recruiter_articles_on_user_id", using: :btree
