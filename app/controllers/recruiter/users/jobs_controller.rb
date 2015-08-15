@@ -42,7 +42,7 @@ module Recruiter
       private
 
       def jobs
-        if current_user.admin? 
+        if current_user.admin?
           return Job.all
         end
 
