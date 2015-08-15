@@ -48,6 +48,7 @@ module Recruiter
           get :index
           expect(assigns(:jobs)).to eq([job])
         end
+
         it_responds_with_success { get :index }
         it_renders_template(:index) { get :index }
       end
@@ -56,9 +57,9 @@ module Recruiter
     describe "#edit" do
       it_requires_authentication { get :edit, id: 1 }
 
-      let(:job) { Job.make!(user: user) }
-
       with_valid_user_or_admin do
+        let(:job) { Job.make!(user: user) }
+
         it "assigns job to @job" do
           get :edit, id: job.id
           expect(assigns(:job)).to eq(job)
@@ -71,9 +72,10 @@ module Recruiter
 
     describe "#show" do
       it_requires_authentication { get :show, id: 1 }
-      let(:job) { Job.make!(user: user) }
 
       with_valid_user_or_admin do
+        let(:job) { Job.make!(user: user) }
+
         it "assigns job to @job" do
           get :show, id: job.id
           expect(assigns(:job)).to eq(job)
