@@ -1,5 +1,5 @@
 Recruiter::Engine.routes.draw do
-  root to: 'jobs#index'
+  root to: 'home#index'
 
   resources :jobs, only: [:index, :show]
   resources :articles, only: [:index, :show]

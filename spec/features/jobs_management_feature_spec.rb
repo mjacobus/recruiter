@@ -6,7 +6,7 @@ feature "Jobs Management" do
   context "when user is logged in" do
     scenario "he is able to publishe a job" do
       city
-      visit root_path
+      visit recruiter.root_path
       login_with_strategy(Recruiter::Oauth::Github)
       click_link t('recruiter.links.jobs.new')
       post_job
@@ -16,7 +16,7 @@ feature "Jobs Management" do
   context "when user is not logged in" do
     scenario "he is able to publishe a job" do
       city
-      visit root_path
+      visit recruiter.root_path
       click_link t('recruiter.links.jobs.new')
       within("#main_content") do
         login_with_strategy(Recruiter::Oauth::Github)
