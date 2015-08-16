@@ -1,6 +1,6 @@
 module Recruiter
   module LinksHelper
-    def button_link(url, classes = nil, options = {},  &block)
+    def button_link(url, classes = nil, options = {}, &block)
       classes = [options[:class], 'button', classes].compact
       options.merge! class: classes
       link_to url, options, &block
