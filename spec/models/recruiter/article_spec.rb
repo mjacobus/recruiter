@@ -12,5 +12,12 @@ module Recruiter
       subject.title = 'Foo Article'
       expect(subject.to_param).to eq('1-foo-article')
     end
+
+    specify 'its is ordered by id id desc' do
+      article1 = Article.make!
+      article2 = Article.make!(updated_at: 2.minutes.from_now)
+
+      expect(Article.all).to eq([article2, article1])
+    end
   end
 end

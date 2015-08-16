@@ -5,6 +5,7 @@ module Recruiter
     validates :user, presence: true
     validates :body, presence: true
 
+    default_scope ->{ order('updated_at DESC') }
     scope :published, ->{ where(published: true) }
 
     def to_param
