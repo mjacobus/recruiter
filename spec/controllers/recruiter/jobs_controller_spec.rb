@@ -34,6 +34,13 @@ module Recruiter
         get :show, id: job.to_param
         expect(assigns(:job)).to eq(job)
       end
+
+      context 'when url is not canonical' do
+        it 'redirects to the canonical' do
+          get :show, id: job.id
+          expect(response).to redirect_to([job])
+        end
+      end
     end
   end
 end

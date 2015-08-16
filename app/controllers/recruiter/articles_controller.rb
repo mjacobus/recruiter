@@ -1,5 +1,5 @@
 module Recruiter
-  class ArticlesController < ApplicationController
+  class ArticlesController < ::RecruiterController
     respond_to :html, :json
 
     def index
@@ -9,7 +9,9 @@ module Recruiter
 
     def show
       @article = scope.find(params[:id])
-      respond_with(@article)
+      ensure_canonical_url(@article) do
+        respond_with(@article)
+      end
     end
 
     private

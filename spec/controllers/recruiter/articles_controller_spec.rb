@@ -29,7 +29,7 @@ module Recruiter
     describe 'GET show' do
       context "with published record" do
         before do
-          get :show, id: published.id
+          get :show, id: published.to_param
         end
 
         it "responds with success" do
@@ -44,8 +44,15 @@ module Recruiter
       context 'with unpublished article' do
         it "raises error" do
           expect do
-            get :show, id: unpublished
+            get :show, id: unpublished.to_param
           end.to raise_error(ActiveRecord::RecordNotFound)
+        end
+      end
+
+      context 'when url is not canonical' do
+        it 'redirects to the canonical' do
+          get :show, id: published.id
+          expect(response).to redirect_to([published])
         end
       end
     end

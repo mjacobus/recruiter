@@ -11,7 +11,9 @@ module Recruiter
 
     def show
       @job = Job.find(params[:id])
-      respond_with(@job)
+      ensure_canonical_url(@job) do
+        respond_with(@job)
+      end
     end
 
     private
