@@ -12,7 +12,7 @@
 <div class="row">
   <div id="articles" class="small-12 medium-12 large-12 columns">
     <h2><%= t('.title_articles') %></h2>
-    <%= render @articles %>
+    <%= render @articles, header_tag: :h3 %>
   </div>
 
   <%= button_link [:articles], 'secondary expand' do %>
