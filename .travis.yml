@@ -9,9 +9,10 @@ rvm:
 env:
   global:
     - "JRUBY_OPTS=-Xcext.enabled=true"
-  - DB=sqlite
-  - DB=mysql
-  - DB=postgresql
+  matrix:
+    - DB=sqlite
+    - DB=mysql
+    - DB=postgresql
 
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
