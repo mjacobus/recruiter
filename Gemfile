@@ -12,5 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
-gem 'rails', '>=3.2', '<=5.0'
+gem 'rails', '>=3.2', '<=6.0'
 gem 'dotenv-rails', :groups => [:development, :test]
