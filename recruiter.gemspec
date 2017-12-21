@@ -28,13 +28,14 @@ Gem::Specification.new do |s|
   s.add_dependency 'omniauth-facebook'
   s.add_dependency 'omniauth-google_oauth2'
   s.add_dependency 'omniauth-github'
-  s.add_dependency 'redcarpet', '~> 3.2.0'
+  s.add_dependency 'redcarpet', '~> 3.4.0'
   s.add_dependency 'makeup', '~>0.3.0'
   s.add_dependency 'draper'
   s.add_dependency 'simple_form'
   s.add_dependency 'foundation-rails'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'foundation-icons-sass-rails'
+  s.add_dependency 'yajl-ruby', '~> 1.3.1'
 
   s.add_development_dependency "mysql2"
   s.add_development_dependency "shoulda-matchers", "~>2.8"
