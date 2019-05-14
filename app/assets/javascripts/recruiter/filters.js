@@ -11,7 +11,7 @@ jQuery(document).ready(function () {
             url: options.url,
             data: data,
             success: function (json) {
-                populateSelect(element, json, { id: "", name: "selecione" } );
+                populateSelect(element, json, { id: "", name: "Selecione uma Cidade" } );
             }
         });
     });
